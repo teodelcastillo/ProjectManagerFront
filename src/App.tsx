@@ -1,5 +1,6 @@
 import { Grid, GridItem } from "@chakra-ui/react"
 import NavBar from "./components/NavBar"
+import CaseGrid from "./components/caseComponents/CaseGrid"
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     </GridItem>
   
     <GridItem pl='2' bg='green.300' area={'main'}>
-      Main
+      <CaseGrid />
     </GridItem>
     <GridItem pl='2' bg='blue.300' area={'footer'}>
       Footer
