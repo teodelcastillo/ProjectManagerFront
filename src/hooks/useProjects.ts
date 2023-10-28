@@ -3,8 +3,12 @@ import apiClient from "../services/api-client"
 import { CanceledError } from "axios"
 
 export interface Project {
-    id: number,
+    id: number
     projectName: string
+    projectDescription: string
+    projectFolderNumber: string
+    projectStatus: string
+    projectJury: string
   }
   
   interface FetchCaseResponse {

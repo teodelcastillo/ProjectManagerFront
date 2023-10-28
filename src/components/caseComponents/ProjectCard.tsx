@@ -18,7 +18,11 @@ const ProjectCard = ({project}: ProjectProps) => {
         </CardHeader>
 		<CardBody padding={'0 20px'}>
 			<Text >
-				Detalle de los proyectos
+				{project.projectDescription}<br/>
+				{project.projectStatus}<br />
+				{project.projectFolderNumber} <br/>
+				{project.projectJury}<br/>
+				
 			</Text>
 		</CardBody>
 		<CardFooter>
