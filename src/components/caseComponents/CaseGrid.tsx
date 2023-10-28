@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import apiClient from '../../services/api-client'
+import { Text } from '@chakra-ui/react'
 
 interface Case {
   id: number,
@@ -28,15 +29,18 @@ const CaseGrid = () => {
   }, []);
 
   return (
-    <ul>
-      {projects ? (
-        projects.map((project) => (
-          <li key={project.id}>{project.projectName}</li>
-        ))
-      ) : (
-        <li>{error || 'Loading...'}</li>
-      )}
-    </ul>
+    <>
+      { error && <Text>{error}</Text>}
+      <ul>
+        {projects ? (
+          projects.map((project) => (
+            <li key={project.id}>{project.projectName}</li>
+          ))
+        ) : (
+          <li>{error || 'Loading...'}</li>
+        )}
+      </ul>
+    </>
   );
 };
 
