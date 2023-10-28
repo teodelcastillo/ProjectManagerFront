@@ -19,14 +19,14 @@ function App() {
     fontWeight='bold'
     height='100vh'
   >
-    <GridItem pl='2' bg='orange.300' area={'header'}>
+    <GridItem   area={'header'}>
       <NavBar/>
     </GridItem>
   
-    <GridItem pl='2' bg='green.300' area={'main'}>
+    <GridItem   area={'main'}>
       <CaseGrid />
     </GridItem>
-    <GridItem pl='2' bg='blue.300' area={'footer'}>
+    <GridItem   area={'footer'}>
       Footer
     </GridItem>
   </Grid>
