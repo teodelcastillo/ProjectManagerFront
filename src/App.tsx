@@ -1,6 +1,6 @@
 import { Grid, GridItem } from "@chakra-ui/react"
 import NavBar from "./components/NavBar"
-import CaseGrid from "./components/caseComponents/CaseGrid"
+import CaseGrid from "./components/caseComponents/ProjectGrid"
 
 
 function App() {
