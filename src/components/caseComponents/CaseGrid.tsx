@@ -1,20 +1,21 @@
-import { Text } from '@chakra-ui/react'
+import { SimpleGrid, Text } from '@chakra-ui/react'
 import useProjects from '../../hooks/useProjects';
+import ProjectCard from './ProjectCard';
 
 const CaseGrid = () => {
   const {projects, error} = useProjects()
   return (
     <>
       { error && <Text>{error}</Text>}
-      <ul>
+      <SimpleGrid columns={{sm: 1, md: 2, lg:3, xl:4}} spacing={10} padding='10px'>
         {projects ? (
           projects.map((project) => (
-            <li key={project.id}>{project.projectName}</li>
+            <ProjectCard key={project.id} project={project} />
           ))
         ) : (
           <li>{error || 'Loading...'}</li>
         )}
-      </ul>
+      </SimpleGrid >
     </>
   );
 };

@@ -2,14 +2,14 @@ import { useState, useEffect } from "react"
 import apiClient from "../services/api-client"
 import { CanceledError } from "axios"
 
-interface Case {
+export interface Project {
     id: number,
     projectName: string
   }
   
   interface FetchCaseResponse {
     count: number,
-    results: Case[]
+    results: Project[]
   }
 
 const useProjects = () => {
