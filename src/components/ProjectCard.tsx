@@ -1,6 +1,6 @@
 
 import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Text } from '@chakra-ui/react'
-import { Project } from '../../hooks/useProjects'
+import { Project } from '../hooks/useProjects'
 
 interface ProjectProps {
     project: Project
