@@ -4,7 +4,7 @@ import ThemeSwitch from './ThemeSwitch'
 
 const NavBar = () => {
   return (
-    <HStack justify={'space-between'} h={'100%'} padding={'10px'}>
+    <HStack justify={'space-between'} h={'100%'}>
       <HStack w={'33%'}>
         <Image src='src\assets\logoestudio.png' alt='Estudio del Castillo & Asociados' boxSize={'50px'} objectFit={'cover'}/>
         <ThemeSwitch />

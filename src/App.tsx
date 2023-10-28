@@ -19,12 +19,13 @@ function App() {
     color='blackAlpha.700'
     fontWeight='bold'
     height='100vh'
+    padding={'0 10px'}
   >
     <GridItem   area={'header'}>
       <NavBar/>
     </GridItem>
   
-    <GridItem   area={'main'}>
+    <GridItem   area={'main'} >
       <CaseGrid />
     </GridItem>
     <GridItem   area={'footer'}>
