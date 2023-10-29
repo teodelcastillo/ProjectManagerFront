@@ -1,14 +1,16 @@
 import { HStack } from '@chakra-ui/react'
 import ClientDrawer from './ClientDrawer'
 import SearchInput from './SearchInput'
+import CreateCase from './CreateCase'
 
-const GridSearchBar = () => {
+const GridBar = () => {
   return (
     <HStack>
         <ClientDrawer/>
         <SearchInput />
+        <CreateCase />
     </HStack>
   )
 }
 
-export default GridSearchBar
+export default GridBar
