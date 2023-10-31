@@ -1,13 +1,6 @@
 import { Grid, GridItem } from "@chakra-ui/react"
 import NavBar from "./components/NavBar"
-import CaseGrid from "./components/ProjectGrid"
-import { Client } from "./hooks/useClients"
-
-interface ProjectQuery {
-  client: Client | null
-  sortOrder: string
-  searchText: string
-}
+import ProjectsGrid from "./components/ProjectsGrid"
 
 
 function App() {
@@ -32,7 +25,7 @@ function App() {
     </GridItem>
   
     <GridItem   area={'main'} >
-      <CaseGrid />
+      <ProjectsGrid />
     </GridItem>
     <GridItem   area={'footer'}>
       footer

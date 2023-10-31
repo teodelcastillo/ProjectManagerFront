@@ -3,7 +3,7 @@ import useProjects from '../hooks/useProjects';
 import ProjectCard from './ProjectCard';
 import GridBar from './GridBar';
 
-const CaseGrid = () => {
+const ProjectsGrid = () => {
   const {data, error} = useProjects()
   return (
     <>
@@ -22,4 +22,4 @@ const CaseGrid = () => {
   );
 };
 
-export default CaseGrid;
+export default ProjectsGrid;
