@@ -1,5 +1,5 @@
 
-import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Link, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Stack, StackDivider, Text } from '@chakra-ui/react'
 import { Project } from '../hooks/useProjects'
 import ClientProjects from './ClientProjectsDashboard'
 
@@ -9,22 +9,49 @@ interface ProjectProps {
 
 const ProjectCard = ({project}: ProjectProps) => {
   return (
-    <Card borderRadius={10} overflow={"hidden"} h={'400px'}>
+    <Card borderRadius={10} overflow={"hidden"} h={'500px'}>
      
         <CardHeader>
-            <Heading fontSize={"xl"}  h={75} overflow={'hidden'}>
-                {project.projectName}
+            <Heading fontSize={"xl"}  h={75} overflow={'hidden'} textTransform={'uppercase'}>
+                {project.projectName} - Expte: {project.projectId}
             </Heading>
+			
 			<Divider></Divider>      
         </CardHeader>
 		<CardBody padding={'0 20px'}>
-			<Text >
-				{project.projectDescription}<br/>
-				{project.projectStatus}<br />
-				{project.projectFolderNumber} <br/>
-				{project.projectJury}<br/>
-				
-			</Text>
+			<Stack divider={<StackDivider />} spacing={'2'}>
+				<Box h={'80px'}>
+					<Heading size={'xs'}>Descripcion</Heading>
+					<Text fontWeight={'normal'} fontSize={'sm'} >
+						{project.projectDescription}					
+					</Text>
+				</Box>
+
+				<Box>
+					<Heading size={'xs'}>Etapa</Heading>
+					<Text fontWeight={'normal'} fontSize={'sm'} >
+						{project.projectStatus}					
+					</Text>
+				</Box>
+				<Box>
+					<Heading size={'xs'}>Carpeta</Heading>
+					<Text fontWeight={'normal'} fontSize={'sm'} >
+						{project.projectFolderNumber}					
+					</Text>
+				</Box>
+				<Box>
+					<Heading size={'xs'}>Juzgado</Heading>
+					<Text fontWeight={'normal'} fontSize={'sm'} >
+						{project.projectJury}					
+					</Text>
+				</Box>
+				<Box>
+					<Heading size={'xs'}>Documentacion</Heading>
+					<Link fontWeight={'normal'} fontSize={'sm'} >
+						{project.projectLink}					
+					</Link>
+				</Box>
+			</Stack>
 		</CardBody>
 		<CardFooter>
 			<Button>View here</Button>

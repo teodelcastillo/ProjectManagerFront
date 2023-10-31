@@ -4,11 +4,13 @@ import { CanceledError } from "axios"
 
 export interface Project {
     id: number
+    projectId: string
     projectName: string
     projectDescription: string
     projectFolderNumber: string
     projectStatus: string
     projectJury: string
+    projectLink: string
   }
   
   interface FetchCaseResponse {

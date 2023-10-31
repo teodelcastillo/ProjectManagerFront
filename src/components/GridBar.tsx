@@ -8,7 +8,6 @@ const GridBar = () => {
     <HStack>
         <ClientDrawer/>
         <SearchInput />
-        <CreateCase />
     </HStack>
   )
 }
