@@ -1,11 +1,12 @@
 
 import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Input, List, ListItem, useDisclosure } from '@chakra-ui/react'
+
 import useClients from '../hooks/useClients'
 
 
 const ClientDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const {clients} = useClients()
+  const {data} = useClients()
 
   return (
     <>
@@ -26,7 +27,7 @@ const ClientDrawer = () => {
           <DrawerBody>
             <Input placeholder='Busque por nombre..' marginBottom={'10px'}/>
             <List >
-              {clients.map(client => <ListItem key={client.id} h={'40px'} w={'100%'} m={'3px 0'} as={Button} onClick={onClose} justifyContent={'flex-start'}>{client.name}</ListItem>)}
+              {data.map(client => <ListItem key={client.id} h={'40px'} w={'100%'} m={'3px 0'} as={Button} onClick={onClose} justifyContent={'flex-start'}>{client.name}</ListItem>)}
             </List>
               
             

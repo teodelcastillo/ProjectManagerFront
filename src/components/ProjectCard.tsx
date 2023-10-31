@@ -1,5 +1,5 @@
 
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Link, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Stack, StackDivider, Text } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Link, Popover, PopoverContent, PopoverTrigger, Stack, StackDivider, Text } from '@chakra-ui/react'
 import { Project } from '../hooks/useProjects'
 import ClientProjects from './ClientProjectsDashboard'
 

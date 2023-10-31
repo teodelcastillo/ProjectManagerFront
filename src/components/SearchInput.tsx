@@ -1,9 +1,20 @@
 import { Input } from '@chakra-ui/react'
-import React from 'react'
+import {useRef} from 'react'
 
-const SearchInput = () => {
+interface Props {
+  onSearch: (searchText: string) => void
+}
+
+const SearchInput = ({onSearch}: Props) => {
+  const ref = useRef<HTMLInputElement>(null)
   return (
-    <Input  placeholder='Search cases..' variant={'filled'}/>
+    <form onSubmit={(event) => {
+      event.preventDefault()
+      if (ref.current) onSearch(ref.current.value)
+
+    }}>
+      <Input ref={ref} placeholder='Search cases..' variant={'filled'}/>
+    </form>
   )
 }
 

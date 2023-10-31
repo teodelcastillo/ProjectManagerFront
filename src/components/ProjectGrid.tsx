@@ -4,14 +4,14 @@ import ProjectCard from './ProjectCard';
 import GridBar from './GridBar';
 
 const CaseGrid = () => {
-  const {projects, error} = useProjects()
+  const {data, error} = useProjects()
   return (
     <>
       { error && <Text>{error}</Text>}
       <GridBar />
       <SimpleGrid columns={{sm: 1, md: 2, lg:3, xl:4}} spacing={10} marginTop={'10px'}>
-        {projects ? (
-          projects.map((project) => (
+        {data ? (
+          data.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))
         ) : (
