@@ -1,5 +1,5 @@
 
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Link, Popover, PopoverContent, PopoverTrigger, Stack, StackDivider, Text } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Popover, PopoverContent, PopoverTrigger, Stack, StackDivider, Text } from '@chakra-ui/react'
 import Project from '../models/Projects'
 import ClientProjects from './ClientProjectsDashboard'
 
@@ -20,36 +20,31 @@ const ProjectCard = ({project}: ProjectProps) => {
         </CardHeader>
 		<CardBody padding={'0 20px'}>
 			<Stack divider={<StackDivider />} spacing={'2'}>
-				<Box h={'80px'}>
-					<Heading size={'xs'}>Cliente</Heading>
-					<Text fontWeight={'normal'} fontSize={'sm'} >
-						{project.clientName}	
-					</Text>
-				</Box>
-
-				<Box>
-					<Heading size={'xs'}>Etapa</Heading>
-					<Text fontWeight={'normal'} fontSize={'sm'} >
-						{project.projectStatus}					
-					</Text>
-				</Box>
-				<Box>
-					<Heading size={'xs'}>Carpeta</Heading>
-					<Text fontWeight={'normal'} fontSize={'sm'} >
-						{project.projectFolderNumber}					
-					</Text>
-				</Box>
-				<Box>
-					<Heading size={'xs'}>Juzgado</Heading>
-					<Text fontWeight={'normal'} fontSize={'sm'} >
-						{project.projectJury}					
-					</Text>
-				</Box>
-				<Box>
-					<Heading size={'xs'}>Documentacion</Heading>
-					<Link fontWeight={'normal'} fontSize={'sm'} >
-						{project.projectLink}					
-					</Link>
+				<Stack h={'90px'} justify={'space-around'}>
+					<Box>
+						<Heading size={'xs'}>Cliente</Heading>
+						<Text fontWeight={'normal'} fontSize={'sm'} >
+							{project.clientName}	
+						</Text>
+					</Box>
+					<Box>
+						<Heading size={'xs'}>Nro de carpeta</Heading>
+						<Text fontWeight={'normal'} fontSize={'sm'} >
+							{project.projectFolderNumber}	
+						</Text>
+					</Box>
+				</Stack>
+				<Box overflow={'auto'} h={'200px'}>
+					<Stack spacing={2} >
+						<Heading size={'xs'}>Vencimientos</Heading>
+						<Box bg={'blue'} h={'45px'}></Box>
+						<Box bg={'blue'} h={'45px'}></Box>
+						<Box bg={'blue'} h={'45px'}></Box>
+						<Box bg={'blue'} h={'45px'}></Box>
+						<Box bg={'blue'} h={'45px'}></Box>
+						<Box bg={'blue'} h={'45px'}></Box>
+						<Box bg={'blue'} h={'45px'}></Box>
+					</Stack>
 				</Box>
 			</Stack>
 		</CardBody>

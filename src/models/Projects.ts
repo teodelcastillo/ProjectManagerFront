@@ -1,5 +1,6 @@
 import Client from "./Client"
 
+
 export default interface Project {
     id: number
     projectId: string
@@ -9,5 +10,6 @@ export default interface Project {
     projectStatus: string
     projectJury: string
     projectLink: string
+    client: Client
     clientName: string
   }
