@@ -37,13 +37,7 @@ const ProjectCard = ({project}: ProjectProps) => {
 				<Box overflow={'auto'} h={'200px'}>
 					<Stack spacing={2} >
 						<Heading size={'xs'}>Vencimientos</Heading>
-						<Box bg={'blue'} h={'45px'}></Box>
-						<Box bg={'blue'} h={'45px'}></Box>
-						<Box bg={'blue'} h={'45px'}></Box>
-						<Box bg={'blue'} h={'45px'}></Box>
-						<Box bg={'blue'} h={'45px'}></Box>
-						<Box bg={'blue'} h={'45px'}></Box>
-						<Box bg={'blue'} h={'45px'}></Box>
+
 					</Stack>
 				</Box>
 			</Stack>

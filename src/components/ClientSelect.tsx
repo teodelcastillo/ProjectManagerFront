@@ -1,19 +1,20 @@
 
-import { Select } from '@chakra-ui/react'
-import useClients, { Client } from '../hooks/useClients'
+import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
+import useClients from '../hooks/useClients'
 
-interface Props {
-  onSelectClient: (client: Client) => void
-  selectLabel: string
-}
 
-const ClientSelect = ({selectLabel, onSelectClient}: Props) => {
+const ClientSelect = () => {
   const {data} = useClients()
 
   return (
-    <Select placeholder={selectLabel} w={'150px'}>
-      {data.map(client => <option value={client.id} key={client.id} onClick={() => onSelectClient(client)}>{client.name}</option>)}
-    </Select>  
+    <Menu>
+  <MenuButton as={Button}>
+    Clientes
+  </MenuButton>
+  <MenuList>
+    {data.map(client => <MenuItem as={Button} key={client.id}>{client.name}</MenuItem>)}
+  </MenuList>
+</Menu>
   )
 }
 export default ClientSelect

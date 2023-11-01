@@ -1,15 +1,7 @@
 import { useState, useEffect } from "react"
 import apiClient from "../services/api-client"
 import { CanceledError } from "axios"
-
-export interface Project {
-  id: number
-  projectName: string
-  projectDescription: string
-  projectFolderNumber: string
-  projectStatus: string
-  projectJury: string
-}
+import Project from "../models/Projects"
 
 interface FetchClientProjectsResponse {
   count: number,
@@ -24,7 +16,7 @@ const useClientProjects = (clientID: number) => {
     const controller = new AbortController();
 
     apiClient
-      .get<FetchClientProjectsResponse>(`/client/${clientID}/projects/`, { signal: controller.signal })
+      .get<FetchClientProjectsResponse>(`/clients/${clientID}/projects/`, { signal: controller.signal })
       .then(res => {
         setClientProjects(res.data);
       })
