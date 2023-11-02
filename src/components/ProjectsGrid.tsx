@@ -1,5 +1,4 @@
 import { SimpleGrid } from '@chakra-ui/react';
-import useProjects from '../hooks/useProjects';
 import ProjectCard from './ProjectCard';
 import Client from '../models/Client';
 import useProjectWithAppointments from '../hooks/useProjectWithAppointments';

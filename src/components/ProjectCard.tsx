@@ -2,6 +2,7 @@
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Popover, PopoverContent, PopoverTrigger, Stack, StackDivider, Text } from '@chakra-ui/react'
 import Project from '../models/Projects'
 import ClientProjects from './ClientProjectsDashboard'
+import AppointmentsAlertInCard from './AppointmentsAlertInCard'
 
 interface ProjectProps {
     project: Project
@@ -37,7 +38,7 @@ const ProjectCard = ({project}: ProjectProps) => {
 				<Box overflow={'auto'} h={'200px'}>
 					<Stack spacing={2} >
 						<Heading size={'xs'}>Vencimientos</Heading>
-
+						<AppointmentsAlertInCard appointments={project.appointments}></AppointmentsAlertInCard>
 					</Stack>
 				</Box>
 			</Stack>
