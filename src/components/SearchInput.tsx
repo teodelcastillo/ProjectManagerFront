@@ -3,9 +3,10 @@ import {useRef} from 'react'
 
 interface Props {
   onSearch: (searchText: string) => void
+  label: string
 }
 
-const SearchInput = ({onSearch}: Props) => {
+const SearchInput = ({onSearch, label}: Props) => {
   const ref = useRef<HTMLInputElement>(null)
   return (
     <form onSubmit={(event) => {
@@ -13,7 +14,7 @@ const SearchInput = ({onSearch}: Props) => {
       if (ref.current) onSearch(ref.current.value)
 
     }}>
-      <Input ref={ref} placeholder='Search cases..' variant={'filled'}/>
+      <Input ref={ref} placeholder={label} variant={'filled'}/>
     </form>
   )
 }

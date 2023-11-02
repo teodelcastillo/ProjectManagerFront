@@ -5,6 +5,7 @@ import ClientSelect from '../components/ClientSelect'
 import SearchInput from '../components/SearchInput'
 import { useState } from 'react'
 import Client from '../models/Client'
+import CreateCase from '../components/CreateCase'
 
 const WorkDashboard = () => {
   const [selectedClient, setSelectedClient] = useState<Client | null>(null)
@@ -17,7 +18,8 @@ const WorkDashboard = () => {
     <Stack h={'70px'}>
       <HStack>
         <ClientSelect onSelectClient={(client) => setSelectedClient(client)} />
-        <SearchInput onSearch={() => console.log('Buscando')} />
+        <CreateCase />
+        <SearchInput label='Buscar por caratula' onSearch={() => console.log('Buscando')} />
       </HStack>
       <div>
         {selectedClient ? 
