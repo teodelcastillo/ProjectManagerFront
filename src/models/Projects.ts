@@ -1,3 +1,4 @@
+import Appointment from "./Appointment"
 import Client from "./Client"
 
 
@@ -12,4 +13,5 @@ export default interface Project {
     projectLink: string
     client: Client
     clientName: string
+    appointments: Appointment[]
   }
