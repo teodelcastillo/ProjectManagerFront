@@ -1,4 +1,5 @@
 
+import { Stack } from "@chakra-ui/react";
 import Appointment from "../models/Appointment";
 import AppointmentAlert from "./AppointmentAlert";
 
@@ -7,11 +8,11 @@ interface Props {
 }
 
 const AppointmentsAlertInCard = ({ appointments }: Props) => {
-  // Ordena las citas por fecha en orden ascendente (de la más próxima a la más lejana)
+
   const sortedAppointments = appointments.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   return (
-    <ul>
+    <Stack>
       {sortedAppointments.map((appointment) => (
         <AppointmentAlert
           key={appointment.id}
@@ -19,7 +20,7 @@ const AppointmentsAlertInCard = ({ appointments }: Props) => {
           appointmentDate={appointment.date}
         ></AppointmentAlert>
       ))}
-    </ul>
+    </Stack>
   );
 }
 
