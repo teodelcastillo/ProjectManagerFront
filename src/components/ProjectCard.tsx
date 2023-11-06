@@ -1,7 +1,7 @@
 
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Popover, PopoverContent, PopoverTrigger, Stack, StackDivider, Text } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Stack, StackDivider, Text } from '@chakra-ui/react'
 import Project from '../models/Projects'
-import ClientProjects from './ClientProjectsDashboard'
+
 import AppointmentsAlertInCard from './AppointmentsAlertInCard'
 
 interface ProjectProps {
@@ -46,15 +46,8 @@ const ProjectCard = ({project}: ProjectProps) => {
 			</Stack>
 		</CardBody>
 		<CardFooter>
-			<Button>View here</Button>
-			<Popover>
-				<PopoverTrigger>
-					<Button>Trigger</Button>
-				</PopoverTrigger>
-				<PopoverContent>
-					<ClientProjects clientId={1}/>
-				</PopoverContent>
-			</Popover>
+			<Button>Mas informacion</Button>
+
 		</CardFooter>
 		
     </Card>
