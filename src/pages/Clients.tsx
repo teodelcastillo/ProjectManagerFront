@@ -1,8 +1,14 @@
-import React from 'react'
+
+import useClients from '../hooks/useClients'
 
 const Clients = () => {
+
+  const {data} = useClients()
+
   return (
-    <div>Clients</div>
+    <ul>
+      {data.map((client) => <li key={client.id}>{client.name}</li>)}
+    </ul>
   )
 }
 

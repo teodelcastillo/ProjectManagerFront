@@ -11,7 +11,7 @@ const postData = {
 
 }
 
-axios.post('/newProject/', postData)
+axios.post('/projects/add', postData)
     .then((response) => {
         console.log('Respuesta enviada al servidor. ', response.data)
     })

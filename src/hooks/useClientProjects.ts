@@ -16,7 +16,7 @@ const useClientProjects = (clientID: number) => {
     const controller = new AbortController();
 
     apiClient
-      .get<FetchClientProjectsResponse>(`/clients/${clientID}/projects/`, { signal: controller.signal })
+      .get<FetchClientProjectsResponse>(`/clients/${clientID}/`, { signal: controller.signal })
       .then(res => {
         setClientProjects(res.data);
       })

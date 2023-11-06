@@ -4,13 +4,15 @@ import Project from "./Projects";
 export default interface Appointment {
     title: string
     id: number
-    date: string; // Puedes usar 'Date' en lugar de 'string' si lo prefieres
-    time: string; // Puedes usar 'Date' en lugar de 'string' si lo prefieres
+    date: string; 
+    time: string; 
     description: string;
     is_done: boolean;
-    done_date: string | null; // Puedes usar 'Date' en lugar de 'string' si lo prefieres
-     // Debes definir la interfaz 'User' si la utilizas
+    done_date: string | null; 
+     
     done_comment: string | null;
-    client: Client | null; // Debes definir la interfaz 'Client' si la utilizas
-    project: Project | null; // Debes definir la interfaz 'Project' si la utilizas
+    client: Client | null; 
+    clientName: string
+    project: Project | null; 
+    projectName: string
   }

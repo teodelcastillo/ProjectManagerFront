@@ -1,13 +1,14 @@
-import { CheckIcon, InfoOutlineIcon } from "@chakra-ui/icons";
-import { Alert, AlertIcon, AlertTitle, AlertDescription, HStack, IconButton, Text } from "@chakra-ui/react"
+import { CheckIcon } from "@chakra-ui/icons";
+import { Alert, AlertIcon, AlertTitle, AlertDescription, HStack, IconButton } from "@chakra-ui/react"
+import DetailedInformationModal from "./DetailedInformationModal";
+import Appointment from "../models/Appointment";
 
 interface Props {
-    appointmentTitle: string,
-    appointmentDate: string
+    appointment: Appointment
 }
 
-const AppointmentAlert = ({ appointmentTitle, appointmentDate }: Props) => {
-    const date = new Date(appointmentDate);
+const AppointmentAlert = ({ appointment }: Props) => {
+    const date = new Date(appointment.date);
     const currentDate = new Date();
 
     // Calcula la diferencia en milisegundos entre la fecha de la cita y la fecha actual
@@ -39,11 +40,11 @@ const AppointmentAlert = ({ appointmentTitle, appointmentDate }: Props) => {
         <Alert status={status} colorScheme={color} justifyContent={'space-between'}>
             <HStack>
                 <AlertIcon />
-                <AlertTitle>{appointmentTitle}</AlertTitle>
+                <AlertTitle>{appointment.title}</AlertTitle>
             </HStack>
             <HStack>
-                <AlertDescription><Text fontWeight={'normal'}> {formattedDate} </Text></AlertDescription>
-                <IconButton ml={'3px'} aria-label="More information" icon={<InfoOutlineIcon />} variant={'outline'} colorScheme={color} size={'sm'} />
+                <AlertDescription fontWeight={'normal'}>{formattedDate} </AlertDescription>
+                <DetailedInformationModal child={appointment}/>
                 <IconButton  aria-label="More information" icon={<CheckIcon />} variant={'outline'} colorScheme={color} size={'sm'} />
             </HStack>
         </Alert>

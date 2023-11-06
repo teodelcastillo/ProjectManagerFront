@@ -16,8 +16,7 @@ const AppointmentsAlertInCard = ({ appointments }: Props) => {
       {sortedAppointments.map((appointment) => (
         <AppointmentAlert
           key={appointment.id}
-          appointmentTitle={appointment.title}
-          appointmentDate={appointment.date}
+          appointment={appointment}
         ></AppointmentAlert>
       ))}
     </Stack>

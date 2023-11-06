@@ -1,7 +1,12 @@
-import React from 'react'
+
+import useProjects from '../hooks/useProjects'
 
 export const Projects = () => {
+
+  const {data } = useProjects()
   return (
-    <div>Projects</div>
+    <ul>
+      {data.map(project => <li key={project.id}>{project.projectName}</li>)}
+    </ul>
   )
 }
