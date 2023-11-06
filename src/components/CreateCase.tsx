@@ -24,7 +24,7 @@ import useCreateProject from '../hooks/useCreateProject';
 const CreateCase = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { data } = useClients();
-  const { createProject, response } = useCreateProject(); // Importa el hook useCreateProject
+  const { createProject } = useCreateProject(); // Importa el hook useCreateProject
 
   const initialRef = useRef(null);
   const finalRef = useRef(null);
@@ -62,7 +62,7 @@ const CreateCase = () => {
           <ModalHeader>Nueva causa / proyecto</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6} >
-            <FormControl>
+            <FormControl isRequired>
               <FormLabel>Caratula</FormLabel>
               <Input
                 ref={initialRef}
@@ -71,7 +71,7 @@ const CreateCase = () => {
               />
             </FormControl>
 
-            <FormControl mt={4}>
+            <FormControl isRequired mt={4}>
               <FormLabel>Cliente</FormLabel>
               <Select
                 placeholder='Cliente relacionado'
@@ -82,7 +82,7 @@ const CreateCase = () => {
               </Select>
             </FormControl>
             <HStack >
-            <FormControl mt={4}>
+            <FormControl isRequired mt={4}>
               <FormLabel>Nro de Expediente</FormLabel>
               <Input
                 ref={initialRef}
@@ -101,7 +101,7 @@ const CreateCase = () => {
               />
               </FormControl>
             </HStack >
-            <FormControl mt={4}>
+            <FormControl isRequired mt={4}>
               <FormLabel>Link Drive</FormLabel>
               <Input 
                 ref={initialRef} 
@@ -110,7 +110,7 @@ const CreateCase = () => {
                 onChange={(e) => setFormData({...formData, projectLink: e.target.value})}  
               />
             </FormControl>
-            <FormControl mt={4}>
+            <FormControl isRequired mt={4}>
               <FormLabel>Juzgado u oficina</FormLabel>
               <Input 
                 ref={initialRef} 
@@ -119,7 +119,7 @@ const CreateCase = () => {
                 onChange={(e) => setFormData({...formData, projectJury: e.target.value})}  
               />
             </FormControl>
-            <FormControl mt={4}>
+            <FormControl isRequired mt={4}>
               <FormLabel>Descripcion</FormLabel>
               <Input 
                 as={Textarea} 
