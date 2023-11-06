@@ -2,6 +2,7 @@ import Client from "./Client";
 import Project from "./Projects";
 
 export default interface Appointment {
+    title: string
     id: number
     date: string; // Puedes usar 'Date' en lugar de 'string' si lo prefieres
     time: string; // Puedes usar 'Date' en lugar de 'string' si lo prefieres

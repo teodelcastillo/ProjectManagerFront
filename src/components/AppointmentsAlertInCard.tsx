@@ -1,16 +1,26 @@
-import Appointment from "../models/Appointment"
+
+import Appointment from "../models/Appointment";
+import AppointmentAlert from "./AppointmentAlert";
 
 interface Props {
-    appointments: Appointment[]
+  appointments: Appointment[];
 }
 
-const AppointmentsAlertInCard = ({appointments}:Props) => {
+const AppointmentsAlertInCard = ({ appointments }: Props) => {
+  // Ordena las citas por fecha en orden ascendente (de la más próxima a la más lejana)
+  const sortedAppointments = appointments.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
   return (
-
     <ul>
-        {appointments.map(appointment => <li key={appointment.id}>{appointment.description}</li>)}
+      {sortedAppointments.map((appointment) => (
+        <AppointmentAlert
+          key={appointment.id}
+          appointmentTitle={appointment.title}
+          appointmentDate={appointment.date}
+        ></AppointmentAlert>
+      ))}
     </ul>
-  )
+  );
 }
 
-export default AppointmentsAlertInCard
+export default AppointmentsAlertInCard;

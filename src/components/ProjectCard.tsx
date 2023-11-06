@@ -9,6 +9,8 @@ interface ProjectProps {
 }
 
 const ProjectCard = ({project}: ProjectProps) => {
+
+
   return (
     <Card borderRadius={10} overflow={"hidden"} h={'500px'}>
      
