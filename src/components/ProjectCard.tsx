@@ -1,8 +1,10 @@
 
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Heading, Stack, StackDivider, Text } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, HStack, Heading, Stack, StackDivider, Text } from '@chakra-ui/react'
 import Project from '../models/Projects'
 
 import AppointmentsAlertInCard from './AppointmentsAlertInCard'
+import { InfoOutlineIcon } from '@chakra-ui/icons'
+import CreateAppointmentForProject from './createAppointmentForProject'
 
 interface ProjectProps {
     project: Project
@@ -44,10 +46,13 @@ const ProjectCard = ({project}: ProjectProps) => {
 					</Stack>
 				</Box>
 			</Stack>
+			<Divider />   
 		</CardBody>
 		<CardFooter>
-			<Button>Mas informacion</Button>
-
+			<HStack>
+				<Button leftIcon={<InfoOutlineIcon />} size={'sm'}>Detalles</Button>
+				<CreateAppointmentForProject project={project}/>
+			</HStack>
 		</CardFooter>
 		
     </Card>

@@ -13,7 +13,7 @@ const NavBar = () => {
       <HStack justify={'center'} gap={5} w={'33%'}>
         <Link as={ReactRouterLink} to={'/'}>Panel general</Link>
         <Link as={ReactRouterLink} to={'/clients'}>Clientes</Link>
-        <Link as={ReactRouterLink} to={'/projects'}>Clientes</Link>
+        <Link as={ReactRouterLink} to={'/projects'}>Causas</Link>
         <Link as={ReactRouterLink} to={'/appointments'}>Vencimientos</Link>
         <Link as={ReactRouterLink} to={'/calendar'}>Calendario</Link>
       </HStack>

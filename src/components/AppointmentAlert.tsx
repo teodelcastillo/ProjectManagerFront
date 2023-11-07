@@ -37,15 +37,15 @@ const AppointmentAlert = ({ appointment }: Props) => {
     }).format(date);
 
     return (
-        <Alert status={status} colorScheme={color} justifyContent={'space-between'}>
+        <Alert status={status} colorScheme={color} justifyContent={'space-between'} h={'55px'}>
             <HStack>
                 <AlertIcon />
                 <AlertTitle>{appointment.title}</AlertTitle>
             </HStack>
             <HStack>
                 <AlertDescription fontWeight={'normal'}>{formattedDate} </AlertDescription>
-                <DetailedInformationModal child={appointment}/>
-                <IconButton  aria-label="More information" icon={<CheckIcon />} variant={'outline'} colorScheme={color} size={'sm'} />
+                <DetailedInformationModal btnColor={color} child={appointment}/>
+                <IconButton  aria-label="Mark as done" icon={<CheckIcon />} variant={'outline'} colorScheme={color} size={'xs'} />
             </HStack>
         </Alert>
     );

@@ -18,7 +18,7 @@ const useCreateProject = () => {
     setResponse({ ...response, loading: true, error: null });
 
     axiosInstance
-      .post('/newProject/', postData)
+      .post('/projects/add/', postData)
       .then((res) => {
         setResponse({ data: res.data, error: null, loading: false });
       })

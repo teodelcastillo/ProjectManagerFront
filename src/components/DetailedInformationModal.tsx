@@ -7,9 +7,10 @@ import Project from '../models/Projects'
 
 interface Props {
   child: Appointment | Client | Project
+  btnColor: string
 }
 
-const DetailedInformationModal = ({child}:Props) => {
+const DetailedInformationModal = ({child, btnColor}:Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
 
@@ -18,7 +19,7 @@ const DetailedInformationModal = ({child}:Props) => {
   return (
     <>
 
-    <IconButton  aria-label="More information" icon={<InfoOutlineIcon />} variant={'outline'} size={'sm'} ref={btnRef} onClick={onOpen} />
+    <IconButton  aria-label="More information" icon={<InfoOutlineIcon />} variant={'outline'} colorScheme={btnColor} size={'xs'} ref={btnRef} onClick={onOpen} />
         
       <Modal
         onClose={onClose}
