@@ -33,10 +33,11 @@ const createAppointmentForProject = ({project}:Props) => {
               <FormControl mt={4} >
                 <FormLabel>Usuario responsable</FormLabel>
                 <Select 
-                  placeholder='@teodorodelctillo'
+                  defaultValue={'@teodorodelcastillo'}
                   overflow={'hidden'}
-                />
-                {data.map(user => <option key={user.id} value={user.id}>{user.username}</option>)}
+                >
+                  {data.map(user => <option key={user.id} value={user.id}>{user.username}</option>)}
+                </Select>
               </FormControl>
               <HStack>
               <FormControl mt={4}>
