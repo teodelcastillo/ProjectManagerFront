@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ClientSelect = ({onSelectClient}: Props) => {
-  const {data} = useClients()
+  const {clients} = useClients()
 
   return (
     <Menu>
@@ -16,7 +16,7 @@ const ClientSelect = ({onSelectClient}: Props) => {
     Clientes
   </MenuButton>
   <MenuList>
-    {data.map(client => <MenuItem as={Button} onClick={() => onSelectClient(client)} key={client.id}>{client.name}</MenuItem>)}
+    {clients.map(client => <MenuItem as={Button} onClick={() => onSelectClient(client)} key={client.id}>{client.name}</MenuItem>)}
   </MenuList>
 </Menu>
   )

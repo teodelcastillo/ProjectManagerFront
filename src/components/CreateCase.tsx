@@ -23,7 +23,7 @@ import useCreateProject from '../hooks/useCreateProject';
 
 const CreateCase = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { data } = useClients();
+  const { clients } = useClients();
   const { createProject } = useCreateProject(); // Importa el hook useCreateProject
 
   const initialRef = useRef(null);
@@ -78,7 +78,7 @@ const CreateCase = () => {
                 overflow={'hidden'}
                 onChange={(e) => setFormData({ ...formData, client: e.target.value })}
               >
-                {data.map((client) => <option key={client.id} value={client.id}>{client.name}</option>)}
+                {clients.map((client) => <option key={client.id} value={client.id}>{client.name}</option>)}
               </Select>
             </FormControl>
             <HStack >
