@@ -31,7 +31,7 @@ const WorkDashboard = () => {
           <TagLabel>{selectedClient.name}</TagLabel>
           <TagCloseButton onClick={clearFilter}/>
         </Tag> : <span></span>}
-        </div>
+      </div>
     </Stack>
     <ProjectsGrid selectedClient={selectedClient} />
     </>

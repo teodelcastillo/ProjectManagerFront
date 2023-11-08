@@ -8,7 +8,7 @@ interface Props {
 
 const AppointmentsAlertInCard = ({ appointments }: Props) => {
   const sortedAppointments = appointments
-    .filter(appointment => !appointment.is_done) // Filtrar citas no completadas
+    .filter(appointment => !appointment.is_done) 
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   return (
