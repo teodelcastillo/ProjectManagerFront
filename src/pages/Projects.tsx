@@ -3,10 +3,10 @@ import useProjects from '../hooks/useProjects'
 
 export const Projects = () => {
 
-  const {data } = useProjects()
+  const { projects } = useProjects()
   return (
     <ul>
-      {data.map(project => <li key={project.id}>{project.projectName}</li>)}
+      {projects.map(project => <li key={project.id}>{project.projectName}</li>)}
     </ul>
   )
 }
