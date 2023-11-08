@@ -36,6 +36,7 @@ const createAppointmentForProject = ({project}:Props) => {
 
     const handleCreate = () => {
       createAppointment(formData)
+      onClose()
     }
     
 

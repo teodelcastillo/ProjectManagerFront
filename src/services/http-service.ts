@@ -29,7 +29,7 @@ class httpService {
     }
 
     update<T extends Entity>(entity: T) {
-        return apiClient.patch(this.endpoint + '/' + entity.id, entity)
+        return apiClient.put(this.endpoint + 'update/' + entity.id + '/', entity)
     }
 }
 
