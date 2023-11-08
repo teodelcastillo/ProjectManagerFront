@@ -3,11 +3,11 @@ import useClients from '../hooks/useClients'
 
 const Clients = () => {
 
-  const {data} = useClients()
+  const {clients} = useClients()
 
   return (
     <ul>
-      {data.map((client) => <li key={client.id}>{client.name}</li>)}
+      {clients.map((client) => <li key={client.id}>{client.name}</li>)}
     </ul>
   )
 }
