@@ -1,7 +1,7 @@
 import axiosInstance from "../services/api-client";
 import { useState } from "react";
 
-interface ProjectData {
+interface newProject {
     projectName: string;
     client: string;
     projectId: string;
@@ -14,7 +14,7 @@ interface ProjectData {
 const useCreateProject = () => {
   const [response, setResponse] = useState({ data: null, error: null, loading: false });
 
-  const createProject = (postData: ProjectData) => {
+  const createProject = (postData: newProject) => {
     setResponse({ ...response, loading: true, error: null });
 
     axiosInstance

@@ -13,6 +13,6 @@ export default interface Appointment {
     done_comment: string | null;
     client: Client | null; 
     clientName: string
-    project: Project | null; 
+    project: Project | null | number; 
     projectName: string
   }

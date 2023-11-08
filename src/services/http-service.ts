@@ -25,7 +25,7 @@ class httpService {
     }
 
     create<T>(entity: T) {
-        return apiClient.post(this.endpoint, entity)
+        return apiClient.post(this.endpoint + 'add/', entity)
     }
 
     update<T extends Entity>(entity: T) {
