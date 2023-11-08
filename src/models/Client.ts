@@ -1,5 +1,6 @@
 export default interface Client {
     id: number
     name: string
-    clientId: string
+    clientID: string
+    ammount_of_projects: number
 }

@@ -1,5 +1,7 @@
-import { Card, CardHeader, Heading, CardBody, Stack, StackDivider, Box, Text } from '@chakra-ui/react'
+import { Card, CardHeader, Heading, CardBody, Stack, StackDivider, Box, Text, Button, CardFooter, HStack, IconButton } from '@chakra-ui/react'
+import { CalendarIcon, EditIcon, SearchIcon  } from '@chakra-ui/icons'
 import Client from '../models/Client'
+
 
 interface Props {
     client: Client
@@ -8,38 +10,45 @@ interface Props {
 const ClientCard = ({client}:Props) => {
   return (
     <Card>
-    <CardHeader>
-        <Heading size='md'>{client.name}</Heading>
+    <CardHeader >
+        <HStack justify={'space-between'}>
+            <Heading size='md'>{client.name}</Heading>
+            <IconButton aria-label='Edit client' variant={'ghost'} icon={<EditIcon/>}/>
+        </HStack>
     </CardHeader>
 
     <CardBody>
         <Stack divider={<StackDivider />} spacing='4'>
         <Box>
             <Heading size='xs' textTransform='uppercase'>
-            Summary
+            CUIT
             </Heading>
-            <Text pt='2' fontSize='sm'>
-            View a summary of all your clients over the last month.
+            <Text pt='2' fontSize='sm' fontWeight={'400'}>
+            {client.clientID}
             </Text>
         </Box>
         <Box>
             <Heading size='xs' textTransform='uppercase'>
-            Overview
+            Cantidad de causas
             </Heading>
-            <Text pt='2' fontSize='sm'>
-            Check out the overview of your clients.
+            <Text pt='2' fontSize='sm' fontWeight={'400'}>
+                {client.ammount_of_projects}
             </Text>
         </Box>
-        <Box>
-            <Heading size='xs' textTransform='uppercase'>
-            Analysis
-            </Heading>
-            <Text pt='2' fontSize='sm'>
-            See a detailed analysis of all your business clients.
-            </Text>
-        </Box>
+
         </Stack>
     </CardBody>
+    <CardFooter
+    justify='space-between'
+
+  >
+    <Button flex='1' variant='ghost' leftIcon={<SearchIcon />}>
+      Causas
+    </Button>
+    <Button flex='1' variant='ghost' leftIcon={<CalendarIcon />}>
+       Vencimientos
+    </Button>
+  </CardFooter>
     </Card>
   )
 }
