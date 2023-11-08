@@ -1,4 +1,3 @@
-
 import { Stack } from "@chakra-ui/react";
 import Appointment from "../models/Appointment";
 import AppointmentAlert from "./AppointmentAlert";
@@ -8,8 +7,9 @@ interface Props {
 }
 
 const AppointmentsAlertInCard = ({ appointments }: Props) => {
-
-  const sortedAppointments = appointments.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  const sortedAppointments = appointments
+    .filter(appointment => !appointment.is_done) // Filtrar citas no completadas
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   return (
     <Stack>

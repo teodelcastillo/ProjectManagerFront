@@ -18,18 +18,17 @@ const ProjectsGrid = ({ selectedClient }: Props) => {
 
   // Función para calcular la urgencia de un proyecto en función de sus citas
   const calculateUrgency = (project:Project) => {
-    
     const appointments = project.appointments;
-
+    
     // Encuentra la cita más próxima
     const nearestAppointment = Math.min(...appointments.map((a) => new Date(a.date).getTime()));
-
+    
     // Calcula la diferencia de tiempo (urgencia) en milisegundos
     const urgency = nearestAppointment - new Date().getTime();
-
+    
     return urgency;
   };
-
+  
   // Ordena los proyectos en función de la urgencia
   filteredProjects.sort((a, b) => calculateUrgency(a) - calculateUrgency(b));
 
@@ -41,7 +40,9 @@ const ProjectsGrid = ({ selectedClient }: Props) => {
             <ProjectCard key={project.id} project={project} />
           ))
         ) : (
-          <li>{error || `No hay proyectos para el cliente: ${selectedClient?.name}`}</li>
+          <li>
+            {error || (selectedClient ? `No hay próximos vencimientos para el cliente: ${selectedClient?.name}` : 'No hay próximos vencimientos')}
+          </li>
         )}
       </SimpleGrid>
     </>

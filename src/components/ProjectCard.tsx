@@ -1,10 +1,10 @@
 
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, HStack, Heading, Stack, StackDivider, Text } from '@chakra-ui/react'
 import Project from '../models/Projects'
-
 import AppointmentsAlertInCard from './AppointmentsAlertInCard'
 import { InfoOutlineIcon } from '@chakra-ui/icons'
-import CreateAppointmentForProject from './createAppointmentForProject'
+import CreateAppointmentForProject from './CreateAppointmentForProject'
+
 
 interface ProjectProps {
     project: Project

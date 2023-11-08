@@ -1,5 +1,4 @@
-import { CheckIcon } from "@chakra-ui/icons";
-import { Alert, AlertIcon, AlertTitle, AlertDescription, HStack, IconButton } from "@chakra-ui/react"
+import { Alert, AlertIcon, AlertTitle, AlertDescription, HStack } from "@chakra-ui/react"
 import DetailedInformationModal from "./DetailedInformationModal";
 import Appointment from "../models/Appointment";
 import MarkAppointmentAsDone from "./MarkAppointmentAsDone";
@@ -39,6 +38,7 @@ const AppointmentAlert = ({ appointment }: Props) => {
     }).format(date);
 
     return (
+        <>
         <Alert status={status} colorScheme={color} justifyContent={'space-between'} h={'55px'}>
             <HStack>
                 <AlertIcon />
@@ -50,6 +50,7 @@ const AppointmentAlert = ({ appointment }: Props) => {
                 <MarkAppointmentAsDone colorScheme={color} appointment={appointment}/>
             </HStack>
         </Alert>
+        </>
     );
 }
 
