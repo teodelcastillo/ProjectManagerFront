@@ -1,8 +1,12 @@
-import React from 'react'
+
+import useAppointments from '../hooks/useAppointments'
 
 const Appointments = () => {
+  const { appointments } = useAppointments()
   return (
-    <div>Appointments</div>
+    <ul>
+      {appointments.map((appointment) => <li key={appointment.id}>{appointment.title}</li>)}
+    </ul>
   )
 }
 
