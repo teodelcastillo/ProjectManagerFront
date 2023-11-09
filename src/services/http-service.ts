@@ -12,9 +12,11 @@ class httpService {
 
     }
 
-    get<T>() {
+    get<T>(page?:number) {
         const controller = new AbortController()
+        const params = page ? { page } : {}
         const request = apiClient.get<T[]>(this.endpoint, { 
+            params,
             signal: controller.signal
         })
         return { request, cancel: () => controller.abort() }
