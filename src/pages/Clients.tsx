@@ -16,7 +16,7 @@ const Clients = () => {
         <SearchInput label='Buscar por nombre' onSearch={() => console.log('Buscando')} />
     </HStack>
     <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={10} marginTop={'10px'}>
-      {clients.map((client) => <ClientCard client={client} />)}
+      {clients.map((client) => <ClientCard client={client} key={client.id}/>)}
     </SimpleGrid>
     </>
   )

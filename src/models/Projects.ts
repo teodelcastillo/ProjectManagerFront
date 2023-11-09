@@ -1,10 +1,7 @@
 import Appointment from "./Appointment"
 import Client from "./Client"
-import PaginationInfo from "./PaginationInfo"
-
 
 export default interface Project {
-    paginationInfo?: PaginationInfo
     id: number
     projectId: string
     projectName: string
