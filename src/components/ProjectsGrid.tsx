@@ -1,7 +1,7 @@
 import { SimpleGrid } from '@chakra-ui/react';
 import ProjectWithAppointmentsCard from './ProjectWithAppointmentsCard';
 import Client from '../models/Client';
-import useProjectWithAppointments from '../hooks/useProjectWithAppointments';
+import useProjectWithAppointmentsNotDone from '../hooks/useProjectsWithAppointmentsNotDone'
 import Project from '../models/Projects';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ProjectsGrid = ({ selectedClient }: Props) => {
-  const { data, error } = useProjectWithAppointments();
+  const { data, error } = useProjectWithAppointmentsNotDone();
 
   // Filtrar proyectos en función del cliente seleccionado
   const filteredProjects = selectedClient
