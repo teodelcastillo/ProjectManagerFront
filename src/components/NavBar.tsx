@@ -1,4 +1,4 @@
-import {  Avatar, Box, Flex, HStack, Image, Link, Text } from '@chakra-ui/react'
+import {  Avatar, Box, Button, Flex, HStack, Image, Link, Text } from '@chakra-ui/react'
 import { Link as ReactRouterLink } from 'react-router-dom'
 import ThemeSwitch from './ThemeSwitch'
 
@@ -11,11 +11,11 @@ const NavBar = () => {
         <ThemeSwitch />
       </HStack>
       <HStack justify={'center'} gap={5} w={'33%'}>
-        <Link as={ReactRouterLink} to={'/'}>Panel general</Link>
-        <Link as={ReactRouterLink} to={'/clients'}>Clientes</Link>
-        <Link as={ReactRouterLink} to={'/projects'}>Causas</Link>
-        <Link as={ReactRouterLink} to={'/appointments'}>Vencimientos</Link>
-        <Link as={ReactRouterLink} to={'/calendar'}>Calendario</Link>
+        <Button variant={'link'} as={ReactRouterLink} to={'/'}>General</Button>
+        <Button variant={'link'} as={ReactRouterLink} to={'/clients'}>Clientes</Button>
+        <Button variant={'link'} as={ReactRouterLink} to={'/projects'}>Causas</Button>
+        <Button variant={'link'} as={ReactRouterLink} to={'/appointments'}>Vencimientos</Button>
+        <Button variant={'link'} as={ReactRouterLink} to={'/calendar'}>Calendario</Button>
       </HStack>
       <HStack w={'33%'} justify={'flex-end'}>
       <Flex>
