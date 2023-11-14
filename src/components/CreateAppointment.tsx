@@ -1,16 +1,14 @@
 import { AddIcon } from '@chakra-ui/icons'
-import { Button, FormControl, FormLabel, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Textarea, useDisclosure } from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, HStack, IconButton, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Textarea, useDisclosure } from '@chakra-ui/react'
 import Project from '../models/Projects'
 import useUsers from '../hooks/useUsers'
 import useCreateAppointment from '../hooks/useCreateAppointment'
 import { useRef, useState } from 'react'
 import useClients from '../hooks/useClients'
 
-interface Props {
-    project: Project
-}
 
-const createAppointment = ({project}:Props) => {
+
+const createAppointment = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { data } = useUsers()
     const { clients } = useClients()
@@ -42,7 +40,7 @@ const createAppointment = ({project}:Props) => {
 
     return (
       <>
-        <Button onClick={onOpen} size={'sm'} leftIcon={<AddIcon />}>Vencimiento</Button>
+        <IconButton onClick={onOpen} icon={<AddIcon />} aria-label={'Add new Appointment'} />
   
         <Modal isOpen={isOpen} onClose={onClose} initialFocusRef={initialRef} finalFocusRef={finalRef}>
           <ModalOverlay />

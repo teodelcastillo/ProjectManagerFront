@@ -2,11 +2,11 @@ import {  InfoOutlineIcon } from '@chakra-ui/icons'
 import { useDisclosure,  Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, IconButton } from '@chakra-ui/react'
 import React from 'react'
 import Appointment from '../models/Appointment'
-import Client from '../models/Client'
-import Project from '../models/Projects'
+
+import MarkAppointmentAsDone from './MarkAppointmentAsDone'
 
 interface Props {
-  child: Appointment | Client | Project
+  child: Appointment 
   btnColor: string
 }
 
@@ -38,7 +38,7 @@ const DetailedInformationModal = ({child, btnColor}:Props) => {
           </ModalBody>
           <ModalFooter>
             
-            <Button onClick={onClose}>Hecho</Button>
+            <MarkAppointmentAsDone buttonSize='md' appointment={child} colorScheme='green'/>
             <Button onClick={onClose} ml={3}>Close</Button>
           </ModalFooter>
         </ModalContent>

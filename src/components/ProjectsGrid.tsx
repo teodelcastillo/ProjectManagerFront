@@ -34,7 +34,7 @@ const ProjectsGrid = ({ selectedClient }: Props) => {
 
   return (
     <>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={10} marginTop={'10px'}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={10} marginTop={'10px'}>
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
             <ProjectWithAppointmentsCard key={project.id} project={project} />

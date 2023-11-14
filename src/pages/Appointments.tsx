@@ -2,7 +2,7 @@
 import { Stack, HStack, Tag, TagLabel, TagCloseButton } from '@chakra-ui/react'
 import AppointmentsTable from '../components/AppointmentsTable'
 import ClientSelect from '../components/ClientSelect'
-import CreateCase from '../components/CreateCase'
+import CreateAppointment from '../components/CreateAppointment'
 import SearchInput from '../components/SearchInput'
 import { useState } from 'react'
 import Client from '../models/Client'
@@ -19,7 +19,7 @@ const Appointments = () => {
       <Stack h={'70px'}>
       <HStack>
         <ClientSelect onSelectClient={(client) => setSelectedClient(client)} />
-        <CreateCase />
+        <CreateAppointment />
         <SearchInput label='Buscar por caratula' onSearch={() => console.log('Buscando')} />
       </HStack>
       <div>

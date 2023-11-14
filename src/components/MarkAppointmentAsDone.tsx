@@ -8,16 +8,15 @@ import useUsers from '../hooks/useUsers'
 interface Props {
     appointment: Appointment
     colorScheme: string
+    buttonSize: string
 }
 
-const MarkAppointmentAsDone = ({colorScheme, appointment}:Props) => {
+const MarkAppointmentAsDone = ({colorScheme, appointment, buttonSize}:Props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef(null)
     const {data} = useUsers()
     const {updateAppointment} = useUpdateAppointment()
 
-    const initialRef = useRef(null)
-    const finalRef = useRef(null)
 
     const client = appointment.client
     const [formData, setFormData] = useState({
@@ -45,7 +44,7 @@ const MarkAppointmentAsDone = ({colorScheme, appointment}:Props) => {
 
   return (
     <>
-    <IconButton  aria-label="More information" icon={<CheckIcon />} variant={'outline'} colorScheme={colorScheme} size={'xs'} ref={btnRef} onClick={onOpen} />
+    <IconButton  aria-label="More information" icon={<CheckIcon />} variant={'outline'} colorScheme={colorScheme} size={buttonSize} ref={btnRef} onClick={onOpen}/>
         
     <Modal
       onClose={onClose}

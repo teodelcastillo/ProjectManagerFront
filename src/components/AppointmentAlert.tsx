@@ -47,7 +47,7 @@ const AppointmentAlert = ({ appointment }: Props) => {
             <HStack>
                 <AlertDescription fontWeight={'normal'}>{formattedDate} </AlertDescription>
                 <DetailedInformationModal btnColor={color} child={appointment}/>
-                <MarkAppointmentAsDone colorScheme={color} appointment={appointment}/>
+                <MarkAppointmentAsDone buttonSize="xs" colorScheme={color} appointment={appointment}/>
             </HStack>
         </Alert>
         </>
